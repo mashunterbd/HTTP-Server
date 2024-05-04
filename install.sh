@@ -7,5 +7,14 @@ cd HTTP-Server
 # Make the server scripts executable
 chmod +x server.start server-control.sh
 
+# change file name server-control.sh to server
+mv server-control.sh server 
+
 # Move the server scripts to /usr/local/bin/ for easy access
-sudo mv server-control.sh server.start /usr/local/bin/
+sudo mv server server.start /usr/local/bin/
+
+# clear terminal 
+clear 
+
+# display successful message 
+echo -e 'install successful' 
