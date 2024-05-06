@@ -22,3 +22,6 @@ chmod +x install.sh
 
 # Execute the downloaded installation script
 ./install.sh
+
+# Remove install.sh after installation
+rm -f install.sh
