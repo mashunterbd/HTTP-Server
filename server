@@ -1,10 +1,12 @@
 #!/bin/bash
 
 function show_help() {
-    echo "Usage:"
-    echo "  server -start     Start HTTP server"
-    echo "  server -stop      Stop running server"
-    echo "  server --help     Show help message"
+    echo "Usage: [server] [Flag]"
+
+    echo "   -start     Start HTTP server"
+    echo "   -stop      Stop running server"
+    echo "   -uninstall Uninstall the server tool"
+    echo "   --help     Show help message"
 }
 
 function start_server() {
@@ -47,6 +49,22 @@ function stop_server() {
     fi
 }
 
+function uninstall_tool() {
+    read -p "Are you sure you want to uninstall this tool from your system? (Y/N): " choice
+    case "$choice" in 
+        [Yy]* )
+            sudo rm -f /usr/local/bin/server
+            echo "Tool successfully uninstalled."
+            ;;
+        [Nn]* )
+            echo "Uninstallation aborted."
+            ;;
+        * )
+            echo "Invalid choice. Please enter Y or N."
+            ;;
+    esac
+}
+
 # Main script logic
 case "$1" in
     "-start")
@@ -54,6 +72,9 @@ case "$1" in
         ;;
     "-stop")
         stop_server
+        ;;
+    "-uninstall")
+        uninstall_tool
         ;;
     "--help")
         show_help
