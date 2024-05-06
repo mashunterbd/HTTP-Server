@@ -9,6 +9,11 @@ By running the script, the interface that is running <b> python3 http.server 80 
 
 
 The Script is designed for <b> Kali NetHunter</b> devices But is it you can use other systems that are <b> Linux base</b>. 
+# One click Install 
+```
+curl -o- https://raw.githubusercontent.com/mashunterbd/HTTP-Server/main/run.sh | bash
+```
+
 # Automatic install
 ``` 
 wget https://raw.githubusercontent.com/mashunterbd/HTTP-Server/main/install.sh; chmod +x install.sh; ./install.sh 
